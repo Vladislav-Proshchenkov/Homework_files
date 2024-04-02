@@ -12,10 +12,11 @@ def get_shop_list_by_dishes(dishes, person_count):
                     'quantity': int(quantity),
                     'measure': measure
                 })
-            shop_list.readline    shop_list_by_dishes = {}
-    for dish in dishes:
-        for ing in cook_book[dish]:
-            shop_list_by_dishes[ing['ingredient_name']] = {'measure': ing['measure'], 'quantity': ing['quantity']*person_count}
-    return shop_list_by_dishes
-
-print(get_shop_list_by_dishes(['Утка по-пекински', 'Омлет'], 2))
+            shop_list.readline()
+            cook_book[dish_name] = ingredients
+        shop_list_by_dishes = {}
+        for dish in dishes:
+            for ingredient in cook_book[dish]:
+                shop_list_by_dishes[ingredient['ingredient_name']] = {'measure': ingredient['measure'], 'quantity': ingredient['quantity'] * person_count}
+        return shop_list_by_dishes
+print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
